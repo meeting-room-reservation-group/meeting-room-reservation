@@ -15,7 +15,16 @@ public class MeetingRoomService {
 
 	public MeetingRoomService(final FacilityRepository facilityRepo, final RoomRepository roomRepo,
 			final MeetingRoomReservationRepository mrrRepo) {
-
+		if (facilityRepo == null) {
+			throw new IllegalArgumentException("Argument 'facilityRepo' should not be null.");
+		}
+		if (roomRepo == null) {
+			throw new IllegalArgumentException("Argument 'roomRepo' should not be null.");
+		}
+		if (mrrRepo == null) {
+			throw new IllegalArgumentException("Argument 'mrrRepo' should not be null.");
+		}
+		
 		this.facilityRepo = facilityRepo;
 		this.roomRepo = roomRepo;
 		this.mrrRepo = mrrRepo;
