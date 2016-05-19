@@ -10,6 +10,7 @@ public class FacilityTest {
 	public void create() throws Exception {
 		Facility monitor = Facility.create("monitor");
 		assertEquals(monitor.getName(), "monitor");
+
 		Facility largeMonitor = Facility.create("large monitor");
 		assertEquals(largeMonitor.getName(), "large monitor");
 	}
