@@ -1,5 +1,7 @@
 package com.github.mrrg.roommanager.repo;
 
+import java.util.Collection;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -30,6 +32,10 @@ public class RoomRepository {
 		}
 
 		return roomByName.get(name);
+	}
+
+	public Collection<Room> getAll() {
+		return Collections.unmodifiableCollection(roomByName.values());
 	}
 
 }
